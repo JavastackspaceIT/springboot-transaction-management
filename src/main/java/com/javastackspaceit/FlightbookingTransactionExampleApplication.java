@@ -7,7 +7,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @SpringBootApplication
 @EnableTransactionManagement
 public class FlightbookingTransactionExampleApplication {
-
+// added comment for bootstraping main method
 	public static void main(String[] args) {
 		SpringApplication.run(FlightbookingTransactionExampleApplication.class, args);
 	}
