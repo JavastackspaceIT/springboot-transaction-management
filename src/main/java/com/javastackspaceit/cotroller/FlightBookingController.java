@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -23,12 +24,13 @@ public class FlightBookingController {
 
 	@Autowired
 	private FlightBookingService flightBookingService;
-	
+
 	@PostMapping
 	public FlightBookingAcknowladgement flightBooking(@RequestBody PassangerBookingRequest request) {
 
 		FlightBookingAcknowladgement acknowladge = null;
 		acknowladge = flightBookingService.flightBook(request);
+
 		return acknowladge;
 	}
 
@@ -36,18 +38,17 @@ public class FlightBookingController {
 	public List<PassangerTikcketBookingDetailsDTO> paymentInfoWithPasssangerInfo() {
 		return flightBookingService.passangerPaymentInfo();
 	}
-	
-	
+
 	@PutMapping
 	public FlightBookingAcknowladgement updateFlightBooking(@RequestBody PassangerBookingRequest request) {
 
-		FlightBookingAcknowladgement acknowladge=null;
+		FlightBookingAcknowladgement acknowladge = null;
 		acknowladge = flightBookingService.updateFlightBook(request);
 		return acknowladge;
 	}
-	
-	@GetMapping(value="/findByEamilId/{emailId}")
-	public PassangerTikcketBookingDetailsDTO findPassangerDetailsById(@PathVariable(value="emailId") String emailId) {
+
+	@GetMapping(value = "/findByEamilId/{emailId}")
+	public PassangerTikcketBookingDetailsDTO findPassangerDetailsById(@PathVariable(value = "emailId") String emailId) {
 		return flightBookingService.findPassangerDetailsByEmailId(Optional.of(emailId));
 	}
 }

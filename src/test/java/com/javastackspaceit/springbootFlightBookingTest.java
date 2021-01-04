@@ -58,7 +58,7 @@ class springbootFlightBookingTest {
 	@Test
 	void flightBookTest() {
 		PassangerInfo passangerInfo = new PassangerInfo(1, "rakesh", "kumar", "8507734789", "r@gmail.com", "Patna", "New Delhi",  null, null);
-		PaymentInfo paymentInfo = new PaymentInfo(2, "sbi","online", "account1", 1002d, passangerInfo);
+		PaymentInfo paymentInfo = new PaymentInfo(2, "sbi","online", "account1", 1002d,passangerInfo);
 		PassangerBookingRequest request = new PassangerBookingRequest();
 		request.setPassangerInfo(passangerInfo);
 		request.setPaymentInfo(paymentInfo);

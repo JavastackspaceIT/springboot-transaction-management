@@ -10,7 +10,7 @@ public class FlightBookingAcknowladgement {
 	private PassangerInfo passangerInfo;
 
 	public String getStatus() {
-		return status;
+	    return status;
 	}
 
 	public void setStatus(String status) {

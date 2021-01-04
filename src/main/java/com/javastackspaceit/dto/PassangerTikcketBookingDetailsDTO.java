@@ -1,7 +1,10 @@
 package com.javastackspaceit.dto;
 
-public class PassangerTikcketBookingDetailsDTO {
+import java.io.Serializable;
 
+public class PassangerTikcketBookingDetailsDTO implements Serializable{
+
+	private static final long serialVersionUID = 1L;
 	private String firstName;
 	private String lastName;
 	private String mobileNo;
@@ -10,7 +13,9 @@ public class PassangerTikcketBookingDetailsDTO {
 	private String amount;
 	private String bankName;
 
-	
+	public PassangerTikcketBookingDetailsDTO() {
+		// TODO Auto-generated constructor stub
+	}
 	public PassangerTikcketBookingDetailsDTO(String firstName, String lastName, String mobileNo, String emailId,
 			String accountName, String amount, String bankName) {
 		this.firstName = firstName;
